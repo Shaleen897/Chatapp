@@ -1,0 +1,112 @@
+$full: 100%;
+$menuheight: 60px;
+$color: dodgerblue;
+
+nav{
+    width: $full;
+    height: $menuheight;
+    background: $color;
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    border-bottom: 1px solid white;
+
+    .container{
+        width: $full;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        
+        
+        
+        .title {
+
+            h1{
+                font-size: 30px;
+                margin-left: 50px;
+            }
+        }
+        
+
+        ul{
+            display: flex;
+            left: 0%;
+            right: 0%;
+            
+             li{
+                margin-right: 30px;
+                list-style: none;
+                padding: 10px;
+
+
+                a{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 20px;
+
+                }
+             }
+
+
+             @media screen and (max-width: 1000px) {
+               display: none;
+             }
+
+             @media screen and (max-width: 1000px) {
+                &.isopen{
+                  display: block;
+                  width: $full;
+                  background: $color;
+                  color: white;
+                  top: 45px;
+                  position: absolute;
+                  overflow: hidden;
+                  left: 0px;
+                    right: 0px;
+                    padding: 0%;
+
+                   
+                  li{
+
+                    .menu-items {
+                        width: $full;
+                        display: block;
+                        font-size: 20px;
+                        font-weight: 500;
+                        border-bottom: 1px solid white;
+                        text-transform: uppercase;
+                        height: $menuheight;
+                        line-height: $menuheight;
+                        padding: 10px;
+                        border-radius: 8px;
+                    }
+                  }
+
+                  a:hover{
+                    background: rgba(0, 0, 0, 0.479);
+                    
+                  }
+                }
+             }
+        }
+
+
+        .burger{
+            margin-right: 50px;
+            padding: 0%;
+            cursor: pointer;
+            
+            @media screen and (min-width: 1000px) {
+                display: none;
+             }
+             
+            i{
+                font-size: 40px;
+            }
+        }
+    }
+}

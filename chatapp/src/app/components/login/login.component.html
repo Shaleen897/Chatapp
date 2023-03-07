@@ -1,0 +1,17 @@
+<div class="container">
+  
+  <div class="signup-form">
+      <h2>Sign In</h2>
+      <form [formGroup]="angForm"  (ngSubmit)="postdata(angForm)" autocomplete="off">
+      
+          <input type="email" name="email" formControlName="email" required placeholder="Enter your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          
+          <input type="password" name="password" formControlName="pass" required placeholder="Password">
+          
+          <button type="submit" >Login</button>
+      </form>
+
+      <span><a routerLink="/singup">Go to Sing Up</a></span>
+  </div>
+  
+</div>

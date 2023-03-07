@@ -1,0 +1,28 @@
+<div class="container">
+  
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form [formGroup]="angForm"  (ngSubmit)="postdata(angForm)" autocomplete="off">
+            <input type="text" name="fname" formControlName="fname" required placeholder="Enter your Fist Name">
+
+            <input type="text" name="lname" formControlName="lname" required placeholder="Enter your Last Name">
+
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" required placeholder="Enter your Email">
+            
+            <input type="password" name="password" formControlName="pass" required placeholder="Password">
+            
+            <input type="file" name="avatar" id="file" accept="img/*" (change)="seleccionarArchivo($event)"  formControlName="avatar">
+            <label for="file">Choose a Photo</label>
+
+            <select name="status" class="status" formControlName="status">
+              <option value="Online">Online</option>
+              <option value="Offline">Offline</option>
+              <option value="Busy">Busy</option>
+            </select>
+          
+            <button type="submit" >Sign Up</button>
+        </form>
+
+        <span><a routerLink="/login">Go to Login</a></span>
+    </div>
+</div>

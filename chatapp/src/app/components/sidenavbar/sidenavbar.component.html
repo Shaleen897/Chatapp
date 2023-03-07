@@ -1,0 +1,32 @@
+<div class="chat-container">
+    <div class="sidenav">
+        <div class="user-info" >
+            <img src="{{imgUrl}}{{userlog?.avatar}}" alt="User avatar">
+            <div class="username">{{userlog?.fname}} {{userlog?.lname}}</div>
+            <div class="user-status">{{userlog?.status}}</div>
+            <button class="btn" (click)="logout()">Log Out</button>
+        </div>
+
+        <hr/>
+
+        <div class="scrollbox">
+            <input type="search" name="filterUser" class="search" placeholder="Search Users" [(ngModel)]="filterUser"/>
+            <div class="scrollbox-inner"  *ngFor="let user of users | filter:filterUser">
+                <div class="chat" *ngIf="user?.email != userlog?.email"  (click)="select_chat(user)">
+                    <img src="{{imgUrl}}{{user?.avatar}}" alt="User avatar">
+                    <div class="username">{{user?.fname}}</div>
+                    <div class="user-status">{{user?.status}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul
+        class="chat-messages">
+        <!-- chat messages here -->
+       <div *ngIf="userInfoText != null" >
+         <app-chat [userInfoText]="userInfoText" [textFrom]="textFrom"></app-chat> 
+      </div>
+    </ul>
+
+</div>
+

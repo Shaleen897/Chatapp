@@ -1,0 +1,16 @@
+<nav>
+  <div class="container">
+    <div class="title"><h1>Logo</h1></div>
+
+    <ul [class.isopen]="isOpen">
+      <li><a class="menu-items" routerLink="/">Home</a></li>
+      <li><a class="menu-items" routerLink="/chat">Chat</a></li>
+      <li><a class="menu-items" routerLink="home">Home</a></li>
+    </ul>
+
+    <div class="burger" (click)="open()">
+      <i class="material-icons"> {{isOpen? 'close' : 'menu'}}</i>
+    </div>
+
+  </div>
+</nav>

@@ -1,0 +1,31 @@
+<div class="chat-container">
+    <div class="sidenav">
+        <div class="user-info">
+            <img src="{{imgUrl}}{{userInfoText.avatar}}" alt="User avatar">
+            <div class="username">{{userInfoText.fname}}</div>
+            <div class="user-status">{{userInfoText.status}}</div>
+        </div>
+        <div class="sidenav-header">Chat messages:</div>
+        <div class="chat-messages">
+            
+                <div *ngFor="let text_Info of texts">
+                  <div class="incomingtext" *ngIf="text_Info.contact_id == textFrom.email + userInfoText.email" >
+                    <div class="username" *ngIf="text_Info.contact_id == textFrom.email" >{{text_Info.text_from}}</div>
+                    <div class="text">{{text_Info?.messaget}}</div>
+                  </div>
+
+                  <div class="outgoingtext" *ngIf="text_Info.contact_id ==  userInfoText.email +  textFrom.email" >
+                    <div class="username">{{text_Info.text_from}}</div>
+                    <div class="text">{{text_Info.messaget}}</div>
+                  </div>
+                </div>
+                <!-- additional chat messages go here -->
+            
+        </div>
+    </div>
+    <form class="chat-form">
+        <input type="text" class="chat-input" placeholder="Enter your message here..." name="text" [(ngModel)]="text">
+        <button class="chat-submit" (click)="sentText()">Send</button>
+    </form>
+</div>
+
